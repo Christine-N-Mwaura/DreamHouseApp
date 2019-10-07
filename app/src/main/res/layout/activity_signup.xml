@@ -31,7 +31,7 @@
             android:layout_marginLeft="50dp"
             android:drawableLeft="@drawable/ic_action_user"
             android:ems="10"
-            android:hint="username (Tom)"
+            android:hint="username (Chris)"
             android:inputType="textPersonName" />
 
 

@@ -12,7 +12,8 @@
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".DashBoardContractors" />
         <activity android:name=".signup" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -3,6 +3,7 @@ package com.christine.dreamhouseapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,7 +42,9 @@ public class DashBoardContractors extends AppCompatActivity {
 //                Toast.makeText(DashBoardContractors.this, contractor, Toast.LENGTH_SHORT).show();
             }
         });
-        mContractorTextView.setText("Here are all the contractors: ");
+        Intent i = getIntent();
+        String Name = i.getStringExtra("name");
+        mContractorTextView.setText("Welcome " + Name + "."+ " Here are all the contractors we have : ");
 
 
 
