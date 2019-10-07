@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/logInTextView"
+            android:id="@+id/signUpTextView"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginTop="38dp"
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logInTextView"
+            app:layout_constraintTop_toBottomOf="@+id/signUpTextView"
             app:layout_constraintVertical_bias="0.51" />
 
         <EditText
@@ -95,7 +95,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login" />
+            app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
         <Button
             android:id="@+id/signUpButton"
