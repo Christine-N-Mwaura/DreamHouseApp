@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -15,7 +16,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity{
     @BindView(R.id.loginButton)Button mLoginButton;
     @BindView(R.id.signUpButton)Button mSignUpButton;
-    @BindView(R.id.emailEditText)EditText mEmail;
+    @BindView(R.id.userNameEditText)EditText mName;
     @BindView(R.id.passwordEditText)EditText mPassword;
 
 
@@ -39,9 +40,9 @@ public class MainActivity extends AppCompatActivity{
             mLoginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String email = mEmail.getText().toString();
-                    showToast(email);
+                    String name = mName.getText().toString();
                     Intent i = new Intent(MainActivity.this,DashBoardContractors.class);
+                    i.putExtra("name",name);
                     startActivity(i);
                 }
 
