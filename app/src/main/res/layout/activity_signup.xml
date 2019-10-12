@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/signUpTextView"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="90dp"
+            android:text="Sign Up"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="50dp"
+            android:drawableLeft="@drawable/ic_action_user"
+            android:ems="10"
+            android:hint="username (Chris)"
+            android:inputType="textPersonName" />
+
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="@android:color/white"
+            android:ems="10"
+            android:hint="email"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/phoneNoEditText"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="50dp"
+            android:drawableLeft="@drawable/ic_action_phone"
+            android:ems="10"
+            android:hint="+(456)"
+            android:inputType="textPersonName|phone" />
+
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="@android:color/white"
+            android:drawableLeft="@drawable/ic_action_password"
+            android:ems="10"
+            android:hint="password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="43dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:clickable="true"
+            android:text="Sign Up" />
+
+    </LinearLayout>
+
+</FrameLayout>
