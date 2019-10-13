@@ -13,7 +13,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity{
     @BindView(R.id.loginButton)Button mLoginButton;
-    @BindView(R.id.signUpButton)Button mSignUpButton;
+    @BindView(R.id.noAccountTextView)TextView mNoAccount;
+//    @BindView(R.id.signUpButton)Button mSignUpButton;
     @BindView(R.id.userNameEditText)EditText mName;
     @BindView(R.id.passwordEditText)EditText mPassword;
 
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mSignUpButton.setOnClickListener(new View.OnClickListener() {
+
+        mNoAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,signup.class);
