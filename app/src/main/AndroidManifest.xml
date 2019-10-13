@@ -9,17 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity
+            android:name=".myDashboard"
+            android:label="@string/title_activity_my_dashboard"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".DashBoardContractors">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.christine.dreamhouseapp.MainActivity">
-            </meta-data>
+                android:value="com.christine.dreamhouseapp.MainActivity" />
         </activity>
         <activity android:name=".signup" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/NoActionBarTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

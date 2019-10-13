@@ -35,18 +35,30 @@ public class MainActivity extends AppCompatActivity{
 
 
 
-
-            mLoginButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String name = mName.getText().toString();
-                    Intent i = new Intent(MainActivity.this,DashBoardContractors.class);
-                    i.putExtra("name",name);
-                    startActivity(i);
-                }
+//
+//            mLoginButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    String name = mName.getText().toString();
+//                    Intent i = new Intent(MainActivity.this,DashBoardContractors.class);
+//                    i.putExtra("name",name);
+//                    startActivity(i);
+//                }
+//
+//
+//        });
+        mLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = mName.getText().toString();
+                Intent i = new Intent(MainActivity.this,myDashboard.class);
+                i.putExtra("name",name);
+                startActivity(i);
+            }
 
 
         });
+
 
 
 

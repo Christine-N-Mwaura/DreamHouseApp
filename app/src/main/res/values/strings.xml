@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DreamhouseApp</string>
+    <string name="title_activity_dashboard">dashboard</string>
+    <string name="tab_text_1">My Profile</string>
+    <string name="tab_text_2">Report</string>
+    <string name="title_activity_my_dashboard">myDashboard</string>
 </resources>
