@@ -91,17 +91,6 @@
         android:textColor="@android:color/white" />
 
 
-<!--        <Button-->
-<!--            android:id="@+id/signUpButton"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="158dp"-->
-<!--            android:layout_marginTop="48dp"-->
-<!--            android:background="@drawable/button"-->
-<!--            android:clickable="true"-->
-<!--            android:text="Sign Up" />-->
-
-
     </LinearLayout>
 
 </RelativeLayout>

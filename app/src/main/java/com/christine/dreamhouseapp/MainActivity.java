@@ -14,7 +14,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity{
     @BindView(R.id.loginButton)Button mLoginButton;
     @BindView(R.id.noAccountTextView)TextView mNoAccount;
-//    @BindView(R.id.signUpButton)Button mSignUpButton;
     @BindView(R.id.userNameEditText)EditText mName;
     @BindView(R.id.passwordEditText)EditText mPassword;
 
