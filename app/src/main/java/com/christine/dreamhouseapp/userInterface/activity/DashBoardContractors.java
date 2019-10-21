@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.christine.dreamhouseapp.ProfileActivity;
+import com.christine.dreamhouseapp.userInterface.activity.ProfileActivity;
 import com.christine.dreamhouseapp.R;
 
 import butterknife.BindView;
