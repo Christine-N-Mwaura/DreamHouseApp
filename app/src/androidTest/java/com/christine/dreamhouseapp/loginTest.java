@@ -9,6 +9,8 @@ import org.junit.runner.RunWith;
 
 import androidx.test.runner.AndroidJUnit4;
 
+import com.christine.dreamhouseapp.userInterface.activity.MainActivity;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;

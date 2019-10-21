@@ -1,4 +1,4 @@
-package com.christine.dreamhouseapp;
+package com.christine.dreamhouseapp.userInterface.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.christine.dreamhouseapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

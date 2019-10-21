@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.christine.dreamhouseapp.R;
-import com.christine.dreamhouseapp.Report;
-import com.christine.dreamhouseapp.myProfile;
+import com.christine.dreamhouseapp.userInterface.activity.Report;
+import com.christine.dreamhouseapp.userInterface.activity.myProfile;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

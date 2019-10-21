@@ -1,4 +1,4 @@
-package com.christine.dreamhouseapp;
+package com.christine.dreamhouseapp.userInterface.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.christine.dreamhouseapp.R;
 
 import static android.app.Activity.RESULT_OK;
 

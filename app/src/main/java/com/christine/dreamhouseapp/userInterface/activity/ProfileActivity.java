@@ -1,4 +1,4 @@
-package com.christine.dreamhouseapp;
+package com.christine.dreamhouseapp.userInterface.activity;
 
 import androidx.fragment.app.DialogFragment;
 
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.christine.dreamhouseapp.R;
 
 public class ProfileActivity extends DialogFragment {
 

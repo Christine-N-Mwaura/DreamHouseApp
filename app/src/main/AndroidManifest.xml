@@ -10,18 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".myDashboard"
+            android:name=".userInterface.activity.myDashboard"
             android:label="@string/title_activity_my_dashboard"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".DashBoardContractors">
+        <activity android:name=".userInterface.activity.ProfileActivity" />
+        <activity android:name=".userInterface.activity.DashBoardContractors">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.christine.dreamhouseapp.MainActivity" />
+                android:value="com.christine.dreamhouseapp.userInterface.activity.MainActivity" />
         </activity>
-        <activity android:name=".signup" />
+        <activity android:name=".userInterface.activity.signup" />
         <activity
-            android:name=".MainActivity"
+            android:name=".userInterface.activity.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,18 +1,17 @@
-package com.christine.dreamhouseapp;
+package com.christine.dreamhouseapp.userInterface.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.christine.dreamhouseapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
