@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/buildersbckg1" />
+        app:srcCompat="@drawable/moviebckg" />
 
 
     <LinearLayout
@@ -28,7 +28,7 @@
             android:layout_marginLeft="48dp"
             android:layout_marginTop="48dp"
             android:fontFamily="cursive"
-            android:text="YOUR                                                      DREAM                                                                                  HOUSE"
+            android:text="YOUR                                                      MOVIE                                                                                  STORE"
             android:textColor="@android:color/holo_red_dark"
             android:textColorHighlight="@android:color/white"
             android:textSize="50sp" />
