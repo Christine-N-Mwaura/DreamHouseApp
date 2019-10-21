@@ -43,7 +43,7 @@ public class movieMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_movie_main);
         recyclerView = findViewById(R.id.rv_movies);
         GridLayoutManager manager = new GridLayoutManager(this, 2);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
