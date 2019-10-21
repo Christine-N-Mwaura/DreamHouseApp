@@ -9,18 +9,13 @@ import java.util.ArrayList;
 public class MoviePageResult implements Serializable {
 
     @SerializedName("page")
-    @Expose
-    private Integer page;
+    private int page;
     @SerializedName("total_results")
-    @Expose
-    private Integer totalResults;
+    private int totalResults;
     @SerializedName("total_pages")
-    @Expose
-    private Integer totalPages;
+    private int totalPages;
     @SerializedName("results")
-    @Expose
-    private ArrayList<Movie> movieResult = null;
-    private final static long serialVersionUID = 9036741358049641864L;
+    private ArrayList<Movie> movieResult;
 
     public MoviePageResult(int page, int totalResults, int totalPages, ArrayList<Movie> movieResult) {
         this.page = page;
@@ -29,35 +24,35 @@ public class MoviePageResult implements Serializable {
         this.movieResult = movieResult;
     }
 
-    public Integer getPage() {
+    public int getPage() {
         return page;
     }
 
-    public void setPage(Integer page) {
+    public void setPage(int page) {
         this.page = page;
     }
 
-    public Integer getTotalResults() {
+    public int getTotalResults() {
         return totalResults;
     }
 
-    public void setTotalResults(Integer totalResults) {
+    public void setTotalResults(int totalResults) {
         this.totalResults = totalResults;
     }
 
-    public Integer getTotalPages() {
+    public int getTotalPages() {
         return totalPages;
     }
 
-    public void setTotalPages(Integer totalPages) {
+    public void setTotalPages(int totalPages) {
         this.totalPages = totalPages;
     }
 
-    public ArrayList<Movie> getMovieResults() {
+    public ArrayList<Movie> getMovieResult() {
         return movieResult;
     }
 
-    public void setMovieResults(ArrayList<Movie> movieResult) {
+    public void setMovieResult(ArrayList<Movie> movieResult) {
         this.movieResult = movieResult;
     }
 
