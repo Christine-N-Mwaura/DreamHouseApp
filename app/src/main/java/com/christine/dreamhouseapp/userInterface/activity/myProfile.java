@@ -42,17 +42,7 @@ public class myProfile extends Fragment {
                 openGallery();
             }
         });
-//        Intent i = getIntent();
-//        String Name = i.getStringExtra("name");
-//        mContractorTextView.setText("Welcome " + Name + "."+ " Here are all the contractors we have : ");
-//
 
-//        mProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dismiss();
-//            }
-//        });
         return view;
     }
     private void openGallery(){

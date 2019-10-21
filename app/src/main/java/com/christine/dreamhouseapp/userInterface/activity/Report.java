@@ -14,7 +14,6 @@ import com.christine.dreamhouseapp.R;
 public class Report extends Fragment {
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.my_dashboard_report,container,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {        return inflater.inflate(R.layout.my_dashboard_report,container,false);
     }
 }
