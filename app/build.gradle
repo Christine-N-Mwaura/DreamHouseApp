@@ -18,7 +18,7 @@ android {
         }
     }
     buildTypes.each {
-        it.buildConfigField('String','MOVIEDB_API_KEY', movieDbApiKey)
+        it.buildConfigField('String', 'MOVIEDB_API_KEY', movieDbApiKey)
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
