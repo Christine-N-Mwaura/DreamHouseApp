@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.christine.dreamhouseapp.R;
+import com.christine.dreamhouseapp.userInterface.activity.movieActivities.movieMainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 String name = mName.getText().toString();
-                Intent i = new Intent(MainActivity.this,myDashboard.class);
+                Intent i = new Intent(MainActivity.this, movieMainActivity.class);
                 i.putExtra("name",name);
                 startActivity(i);
             }

@@ -16,6 +16,8 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.christine.dreamhouseapp.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
+
 public class MovieViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_movie_poster)
     ImageView mMoviePoster;

@@ -1,4 +1,4 @@
-package com.christine.dreamhouseapp.userInterface.activity;
+package com.christine.dreamhouseapp.userInterface.activity.movieActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -30,7 +30,7 @@ import static com.christine.dreamhouseapp.Constants.MOVIEDB_API_KEY;
 
 public class movieMainActivity extends AppCompatActivity {
 
-    public static final String API_KEY = MOVIEDB_API_KEY;
+    public static final String API_KEY = "2ce794e7328d397fca26bfa0eb3f2c54";
     private static int totalPages;
     private static int currentSortMode = 1;
     private Call<MoviePageResult> call;
@@ -39,21 +39,19 @@ public class movieMainActivity extends AppCompatActivity {
     private MovieAdapter movieAdapter;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         recyclerView = findViewById(R.id.rv_movies);
-        GridLayoutManager manager = new GridLayoutManager(this,2);
-        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup(){
-
+        GridLayoutManager manager = new GridLayoutManager(this, 2);
+        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
-            public int getSpanSize(int position){
+            public int getSpanSize(int position) {
                 return 1;
             }
         });
-
         recyclerView.setLayoutManager(manager);
 
         loadPage(1);
@@ -61,27 +59,27 @@ public class movieMainActivity extends AppCompatActivity {
         EndlessRecyclerViewScrollListener scrollListener = new EndlessRecyclerViewScrollListener(manager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                if((page + 1)<= totalPages){
+                if ((page + 1) <= totalPages) {
                     loadPage(page + 1);
                 }
             }
         };
 
         recyclerView.addOnScrollListener(scrollListener);
-
-
     }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.sort_menu, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-
-        switch(item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //SortID 1 -> Popularity
+        //SortID 2 -> Top rated
+        switch (item.getItemId()) {
             case R.id.sort_by_popularity:
                 currentSortMode = 1;
                 break;
@@ -91,25 +89,28 @@ public class movieMainActivity extends AppCompatActivity {
         }
         loadPage(1);
         return super.onOptionsItemSelected(item);
+
     }
 
-    private void loadPage (final int page){
+    private void loadPage(final int page) {
         GetMovieDataService movieDataService = RetrofitInstance.getRetrofitInstance().create(GetMovieDataService.class);
 
-        switch (currentSortMode){
+        switch(currentSortMode){
             case 1:
-                call = movieDataService.getPopularMovies(page,API_KEY);
+                call = movieDataService.getPopularMovies(page, API_KEY);
                 break;
             case 2:
-                call = movieDataService.getTopRatedMovies(page,API_KEY);
+                call = movieDataService.getTopRatedMovies(page, API_KEY);
+                break;
         }
+
 
         call.enqueue(new Callback<MoviePageResult>() {
             @Override
             public void onResponse(Call<MoviePageResult> call, Response<MoviePageResult> response) {
 
                 if(page == 1) {
-                    movieResults = response.body().getMovieResults();
+                    movieResults = response.body().getMovieResult();
                     totalPages = response.body().getTotalPages();
 
                     movieAdapter = new MovieAdapter(movieResults, new MovieClickListener() {
@@ -124,7 +125,7 @@ public class movieMainActivity extends AppCompatActivity {
                     });
                     recyclerView.setAdapter(movieAdapter);
                 } else {
-                    List<Movie> movies = response.body().getMovieResults();
+                    List<Movie> movies = response.body().getMovieResult();
                     for(Movie movie : movies){
                         movieResults.add(movie);
                         movieAdapter.notifyItemInserted(movieResults.size() - 1);
@@ -139,6 +140,7 @@ public class movieMainActivity extends AppCompatActivity {
             }
         });
     }
+
     public static String movieImagePathBuilder(String imagePath) {
         return "https://image.tmdb.org/t/p/" +
                 "w500" +

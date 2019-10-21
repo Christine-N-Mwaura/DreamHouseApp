@@ -1,4 +1,4 @@
-package com.christine.dreamhouseapp.userInterface.activity;
+package com.christine.dreamhouseapp.userInterface.activity.movieActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
