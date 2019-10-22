@@ -7,13 +7,14 @@ This mobile application allows a client to connect with a contractor,make a deal
 
 ## User Requirements
 The application allow users to do the following:
-1. A contractor can sign up with their details.
-2. View their profiles and those of other contractors.
+1. A user can create an account and save their credentials.
+2. A user can login with their credentials.
+3. A user can logout from the app.
 
 
 ## Project Setup
 * Make sure all requirements for running java applications are installed;Android Studio,SDK,emulator/android phone.
-* Clone the project to your local machine from https://github.com/Christine-N-Mwaura/DreamHouseApp.git.
+* Clone the project to your local machine from https://github.com/Christine-N-Mwaura/MoviesApp.git
 * Run the app on the emulator.
  
  
@@ -24,6 +25,9 @@ The application allow users to do the following:
 * Junit
 * Android
 * SDK
+* MovieDb api
+* Firebase
+
 
 
 ## Bugs
