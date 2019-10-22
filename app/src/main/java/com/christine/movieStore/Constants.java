@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp;
+package com.christine.movieStore;
 
 public class Constants {
     public static final String MOVIEDB_BASE_URL = "https://api.themoviedb.org/3/";

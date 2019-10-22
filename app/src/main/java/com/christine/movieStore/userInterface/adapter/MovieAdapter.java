@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp.userInterface.adapter;
+package com.christine.movieStore.userInterface.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,10 +6,10 @@ import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.christine.DreamhouseApp.R;
-import com.christine.DreamhouseApp.model.Movie;
-import com.christine.DreamhouseApp.userInterface.utils.MovieClickListener;
-import com.christine.DreamhouseApp.userInterface.viewHolder.MovieViewHolder;
+import com.christine.movieStore.R;
+import com.christine.movieStore.model.Movie;
+import com.christine.movieStore.userInterface.utils.MovieClickListener;
+import com.christine.movieStore.userInterface.viewHolder.MovieViewHolder;
 
 import java.util.List;
 

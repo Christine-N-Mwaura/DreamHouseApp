@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp;
+package com.christine.movieStore;
 
 import android.content.Context;
 
@@ -24,6 +24,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.christine.dreamhouseapp", appContext.getPackageName());
+        assertEquals("com.christine.movieStore", appContext.getPackageName());
     }
 }

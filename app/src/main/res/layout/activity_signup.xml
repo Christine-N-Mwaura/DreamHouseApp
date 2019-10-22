@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/buildersbckg1" />
+        app:srcCompat="@drawable/moviebckg" />
 
 
     <LinearLayout
@@ -58,7 +58,7 @@
             android:ems="10"
             android:hint="  email"
             android:inputType="textEmailAddress"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/phoneNoEditText"

@@ -1,6 +1,6 @@
-package com.christine.DreamhouseApp.userInterface.utils;
+package com.christine.movieStore.userInterface.utils;
 
-import com.christine.DreamhouseApp.model.Movie;
+import com.christine.movieStore.model.Movie;
 
 public interface MovieClickListener {
 

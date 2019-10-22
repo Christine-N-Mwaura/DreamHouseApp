@@ -1,6 +1,6 @@
-package com.christine.DreamhouseApp.network;
+package com.christine.movieStore.network;
 
-import com.christine.DreamhouseApp.model.MovieTrailerResult;
+import com.christine.movieStore.model.MovieTrailerResult;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

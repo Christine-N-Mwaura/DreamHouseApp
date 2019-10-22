@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp.userInterface.viewHolder;
+package com.christine.movieStore.userInterface.viewHolder;
 
 import android.content.res.Resources;
 import android.view.View;
@@ -8,15 +8,15 @@ import android.widget.ImageView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.christine.DreamhouseApp.R;
-import com.christine.DreamhouseApp.model.Movie;
-import com.christine.DreamhouseApp.userInterface.utils.MovieClickListener;
+import com.christine.movieStore.R;
+import com.christine.movieStore.model.Movie;
+import com.christine.movieStore.userInterface.utils.MovieClickListener;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.christine.DreamhouseApp.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
+import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_movie_poster)

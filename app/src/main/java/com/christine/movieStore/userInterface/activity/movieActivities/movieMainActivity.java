@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp.userInterface.activity.movieActivities;
+package com.christine.movieStore.userInterface.activity.movieActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -11,14 +11,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.christine.DreamhouseApp.R;
-import com.christine.DreamhouseApp.model.Movie;
-import com.christine.DreamhouseApp.model.MoviePageResult;
-import com.christine.DreamhouseApp.network.GetMovieDataService;
-import com.christine.DreamhouseApp.network.RetrofitInstance;
-import com.christine.DreamhouseApp.userInterface.adapter.MovieAdapter;
-import com.christine.DreamhouseApp.userInterface.utils.EndlessRecyclerViewScrollListener;
-import com.christine.DreamhouseApp.userInterface.utils.MovieClickListener;
+import com.christine.movieStore.R;
+import com.christine.movieStore.model.Movie;
+import com.christine.movieStore.model.MoviePageResult;
+import com.christine.movieStore.network.GetMovieDataService;
+import com.christine.movieStore.network.RetrofitInstance;
+import com.christine.movieStore.userInterface.activity.MainActivity;
+import com.christine.movieStore.userInterface.adapter.MovieAdapter;
+import com.christine.movieStore.userInterface.utils.EndlessRecyclerViewScrollListener;
+import com.christine.movieStore.userInterface.utils.MovieClickListener;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -84,10 +86,22 @@ public class movieMainActivity extends AppCompatActivity {
             case R.id.sort_by_top:
                 currentSortMode = 2;
                 break;
+            case R.id.action_logout:
+                logout();
+                return true;
         }
         loadPage(1);
         return super.onOptionsItemSelected(item);
 
+    }
+
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(movieMainActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
     private void loadPage(final int page) {

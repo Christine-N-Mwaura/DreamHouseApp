@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DreamhouseApp</string>
+    <string name="app_name">movieStore</string>
     <string name="title_activity_dashboard">dashboard</string>
     <string name="tab_text_1">My Profile</string>
     <string name="tab_text_2">Report</string>
@@ -28,4 +28,5 @@
     <string name="pref_sort_order_key">sortOrder</string>
     <string name="pref_most_popular">Most popular</string>
     <string name="pref_highest_rated">Highest Rated</string>
+    <string name="logout">Log Out</string>
 </resources>

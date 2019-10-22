@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp.userInterface.activity.movieActivities;
+package com.christine.movieStore.userInterface.activity.movieActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.christine.DreamhouseApp.R;
-import com.christine.DreamhouseApp.model.Movie;
-import com.christine.DreamhouseApp.model.MovieTrailerResult;
-import com.christine.DreamhouseApp.network.GetMovieTrailerService;
-import com.christine.DreamhouseApp.network.RetrofitInstance;
+import com.christine.movieStore.R;
+import com.christine.movieStore.model.Movie;
+import com.christine.movieStore.model.MovieTrailerResult;
+import com.christine.movieStore.network.GetMovieTrailerService;
+import com.christine.movieStore.network.RetrofitInstance;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -22,8 +22,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.christine.DreamhouseApp.userInterface.activity.movieActivities.movieMainActivity.API_KEY;
-import static com.christine.DreamhouseApp.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
+import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.API_KEY;
+import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
 
 public class MovieActivity extends AppCompatActivity {
 

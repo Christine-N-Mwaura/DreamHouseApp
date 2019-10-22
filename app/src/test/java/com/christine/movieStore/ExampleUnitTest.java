@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp;
+package com.christine.movieStore;
 
 import org.junit.Test;
 

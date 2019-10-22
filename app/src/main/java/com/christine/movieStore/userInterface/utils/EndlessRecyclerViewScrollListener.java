@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp.userInterface.utils;
+package com.christine.movieStore.userInterface.utils;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;

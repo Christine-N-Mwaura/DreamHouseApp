@@ -1,9 +1,9 @@
-package com.christine.DreamhouseApp.network;
+package com.christine.movieStore.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.christine.DreamhouseApp.Constants.MOVIEDB_BASE_URL;
+import static com.christine.movieStore.Constants.MOVIEDB_BASE_URL;
 
 public class RetrofitInstance {
 

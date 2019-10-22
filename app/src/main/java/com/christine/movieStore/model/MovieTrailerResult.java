@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp.model;
+package com.christine.movieStore.model;
 
 import com.google.gson.annotations.SerializedName;
 

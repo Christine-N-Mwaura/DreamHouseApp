@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.christine.dreamhouseapp">
+    package="com.christine.movieStore">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,21 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".userInterface.activity.movieActivities.MovieActivity"></activity>
-        <activity android:name=".userInterface.activity.movieActivities.movieMainActivity" />
+        <activity android:name="com.christine.movieStore.userInterface.activity.movieActivities.MovieActivity"></activity>
+        <activity android:name="com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity" />
+        <activity android:name="com.christine.movieStore.userInterface.activity.signup" />
         <activity
-            android:name=".userInterface.activity.myDashboard"
-            android:label="@string/title_activity_my_dashboard"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".userInterface.activity.ProfileActivity" />
-        <activity android:name=".userInterface.activity.DashBoardContractors">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.christine.dreamhouseapp.userInterface.activity.MainActivity" />
-        </activity>
-        <activity android:name=".userInterface.activity.signup" />
-        <activity
-            android:name=".userInterface.activity.MainActivity"
+            android:name="com.christine.movieStore.userInterface.activity.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

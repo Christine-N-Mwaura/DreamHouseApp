@@ -1,4 +1,4 @@
-package com.christine.DreamhouseApp.userInterface.activity;
+package com.christine.movieStore.userInterface.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,12 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.christine.DreamhouseApp.R;
-import com.christine.DreamhouseApp.userInterface.activity.movieActivities.movieMainActivity;
+import com.christine.movieStore.R;
+import com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,92 +38,63 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mLoginButton.setOnClickListener(this);
-        mNoAccount.setOnClickListener(this);
         progressDialog = new ProgressDialog(this);
         mFirebaseAuth = FirebaseAuth.getInstance();
-
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser() !=null){
-
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user !=null){
+                   //getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
                     startActivity(new Intent(MainActivity.this,movieMainActivity.class));
                 }
             }
-        };
+       };
+
+        mLoginButton.setOnClickListener(this);
+        mNoAccount.setOnClickListener(this);
     }
 
-//
-//        mNoAccount.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(MainActivity.this,signup.class);
-//                startActivity(i);
-//
-//            }
-//        });
 
+        private void logIn(){
+            String email = mEmail.getText().toString().trim();
+            String password = mPassword.getText().toString().trim();
 
-//        mLoginButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String name = mName.getText().toString();
-//                Intent i = new Intent(MainActivity.this, movieMainActivity.class);
-//                i.putExtra("name",name);
-//                startActivity(i);
-//            }
-//
-//
-//        });
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+                Toast.makeText(MainActivity.this,"Field is empty",Toast.LENGTH_SHORT).show();
+            }else{
 
-    private void registerUser(){
-
-        String email = mEmail.getText().toString().trim();
-        String password = mPassword.getText().toString().trim();
-
-        if(email.isEmpty()){
-            //name is empty
-            Toast.makeText(this,"Please enter the correct email",Toast.LENGTH_SHORT).show();
-            return;
-
-        }
-        else if (TextUtils.isEmpty(password)){
-
-            //password is empty
-            Toast.makeText(this,"Please enter the correct password",Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        progressDialog.setMessage("Registering user...");
-        progressDialog.show();
-
-        mFirebaseAuth.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                progressDialog.setMessage("Logging in...");
+                progressDialog.show();
+                mFirebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            //Show the movie posters
+                        if (!task.isSuccessful()){
+                            Toast.makeText(MainActivity.this,"Sign in problem",Toast.LENGTH_SHORT).show();
 
-                            Toast.makeText(MainActivity.this,"Registered successfully",Toast.LENGTH_SHORT).show();
-                            Intent i = new Intent(MainActivity.this, movieMainActivity.class);
+                        }else if (task.isSuccessful()){
+                            Toast.makeText(MainActivity.this,"LogIn successful",Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(MainActivity.this,movieMainActivity.class);
                             startActivity(i);
-                        }else{
-                            Toast.makeText(MainActivity.this,"Couldn't register please try again",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-    }
+            }
+
+        }
 
         @Override
         public void onClick(View view){
 
             if(view == mLoginButton){
-                registerUser();
+                logIn();
+
+
             }
             if(view == mNoAccount){
+                Intent i = new Intent(MainActivity.this,signup.class);
+               startActivity(i);
 
-                //signUpUser();
             }
         }
 
