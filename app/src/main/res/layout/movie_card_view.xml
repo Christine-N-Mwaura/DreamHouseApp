@@ -3,12 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#1a1110"
     android:id="@+id/cv_movie_card">
 
     <ImageView
         android:id="@+id/iv_movie_poster"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="188dp"
+        android:layout_height="284dp"
         android:contentDescription="@string/movie_poster" />
 
 </androidx.cardview.widget.CardView>
