@@ -16,5 +16,5 @@
 /gradlew.bat
 /settings.gradle
 /gradle.properties
-
-
+.idea
+.idea/
