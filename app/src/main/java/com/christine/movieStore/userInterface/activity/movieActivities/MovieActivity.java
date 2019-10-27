@@ -56,11 +56,12 @@ public class MovieActivity extends AppCompatActivity {
     private void populateActivity(Movie mMovie){
         final Picasso picasso = Picasso.get();
         picasso.load(movieImagePathBuilder(mMovie.getPosterPath())).into(mMoviePoster);
-        mMovieTitle.setText(mMovie.getTitle());
+        mMovieTitle.setText("Title:  " + mMovie.getTitle());
+        Log.i("JJJJJJJJJJJJJJJJJJ",mMovie.getTitle());
         mMovieOverview.setText(mMovie.getOverview());
-        mMovieReleaseDate.setText(mMovie.getReleaseDate());
+        mMovieReleaseDate.setText("Release Date:  " + mMovie.getReleaseDate());
 
-        String userRatingText = String.valueOf(mMovie.getVoteAverage()) + "/10";
+        String userRatingText = "Rating:  " + String.valueOf(mMovie.getVoteAverage()) + "/10";
         mMovieRating.setText(userRatingText);
     }
 
