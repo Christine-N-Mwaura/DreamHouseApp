@@ -129,6 +129,12 @@ public class Movie implements Serializable {
     }
 
 
+    public  Movie(String title,String overview,String releaseDate){
+        this.overview = overview;
+        this.releaseDate = releaseDate;
+        this.title = title;
+
+    }
     public Movie(int voteCount, int id, boolean video, double voteAverage, String title,
                  double popularity, String posterPath, String originalLanguage,
                  String originalTitle, List<Integer> genreId, String backdropPath,
@@ -185,5 +191,6 @@ public class Movie implements Serializable {
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
+
 
 }
