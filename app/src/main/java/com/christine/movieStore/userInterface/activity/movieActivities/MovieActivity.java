@@ -1,10 +1,13 @@
 package com.christine.movieStore.userInterface.activity.movieActivities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +17,15 @@ import com.christine.movieStore.model.Movie;
 import com.christine.movieStore.model.MovieTrailerResult;
 import com.christine.movieStore.network.GetMovieTrailerService;
 import com.christine.movieStore.network.RetrofitInstance;
+import com.firebase.client.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,7 +36,7 @@ import retrofit2.Response;
 import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.API_KEY;
 import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
 
-public class MovieActivity extends AppCompatActivity {
+public class MovieActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.movie_activity_title)
     TextView mMovieTitle;
@@ -35,6 +46,17 @@ public class MovieActivity extends AppCompatActivity {
     @BindView(R.id.movie_activity_release_date) TextView mMovieReleaseDate;
     @BindView(R.id.movie_activity_rating)
     TextView mMovieRating;
+    @BindView(R.id.favoritesBtn)
+    Button mFavorites;
+    private Movie mMovies;
+    public static final String TAG = MovieActivity.class.getSimpleName();
+
+    long maxid = 0;
+
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mDatabaseReference = mDatabase.getReference();
+
+
 
 
     @Override
@@ -42,22 +64,29 @@ public class MovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
 
+
+
         ButterKnife.bind(this);
+
+
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        databaseMovies = database.getReference("movie");
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        Movie mMovie = (Movie) bundle.getSerializable("movie");
+        com.christine.movieStore.model.Movie mMovie = (com.christine.movieStore.model.Movie) bundle.getSerializable("movie");
 
         getTrailer(mMovie.getId());
         populateActivity(mMovie);
 
+        mFavorites.setOnClickListener(this);
+
     }
 
-    private void populateActivity(Movie mMovie){
+    private void populateActivity(com.christine.movieStore.model.Movie mMovie){
         final Picasso picasso = Picasso.get();
         picasso.load(movieImagePathBuilder(mMovie.getPosterPath())).into(mMoviePoster);
         mMovieTitle.setText("Title:  " + mMovie.getTitle());
-        Log.i("JJJJJJJJJJJJJJJJJJ",mMovie.getTitle());
         mMovieOverview.setText(mMovie.getOverview());
         mMovieReleaseDate.setText("Release Date:  " + mMovie.getReleaseDate());
 
@@ -84,4 +113,23 @@ public class MovieActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onClick(View v) {
+        addFavorites();
+    }
+
+    public void addFavorites(){
+
+        String title = mMovieTitle.getText().toString();
+        String overview = mMovieOverview.getText().toString();
+        String releaseDate = mMovieReleaseDate.getText().toString();
+        //mDatabaseReference.setValue(title);
+        Movie movie = new Movie(title,overview,releaseDate );
+        mDatabaseReference = mDatabase.getReference().child("favorites");
+        String key = mDatabaseReference.push().getKey();
+        mDatabaseReference.child(key).setValue(movie);
+
+        Toast.makeText(this,"Movie added to favorites",Toast.LENGTH_SHORT).show();
+
+    }
 }
