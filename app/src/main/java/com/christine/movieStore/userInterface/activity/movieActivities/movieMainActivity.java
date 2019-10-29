@@ -1,7 +1,9 @@
 package com.christine.movieStore.userInterface.activity.movieActivities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -22,6 +24,7 @@ import com.christine.movieStore.userInterface.utils.EndlessRecyclerViewScrollLis
 import com.christine.movieStore.userInterface.utils.MovieClickListener;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -54,7 +57,12 @@ public class movieMainActivity extends AppCompatActivity {
         });
         recyclerView.setLayoutManager(manager);
 
+
+
+
+
         loadPage(1);
+
 
         EndlessRecyclerViewScrollListener scrollListener = new EndlessRecyclerViewScrollListener(manager) {
             @Override
@@ -65,7 +73,11 @@ public class movieMainActivity extends AppCompatActivity {
             }
         };
 
+
         recyclerView.addOnScrollListener(scrollListener);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+
     }
 
     @Override
@@ -145,6 +157,7 @@ public class movieMainActivity extends AppCompatActivity {
                             bundle.putSerializable("movie", movie);
                             intent.putExtras(bundle);
                             startActivity(intent);
+
                         }
                     });
                     recyclerView.setAdapter(movieAdapter);
@@ -172,4 +185,22 @@ public class movieMainActivity extends AppCompatActivity {
     }
 
 
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN
+    |ItemTouchHelper.START |ItemTouchHelper.END,0){
+
+        @Override
+        public  boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target){
+            int fromPosition = viewHolder.getAdapterPosition();
+            int toPosition = target.getAdapterPosition();
+            Collections.swap(movieResults, fromPosition, toPosition);
+            recyclerView.getAdapter().notifyItemMoved(fromPosition,toPosition);
+            return  false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction){
+
+        }
+
+    };
 }
