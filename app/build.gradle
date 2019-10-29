@@ -68,8 +68,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:17.0.0'
 
     //parceble dependacies
-   implementation 'org.parceler:parceler-api:1.1.12'
-   annotationProcessor 'org.parceler:parceler:1.1.12'
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+    implementation 'me.spark:submitbutton:1.0.1'
 
 
 }

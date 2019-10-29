@@ -135,6 +135,8 @@ public class Movie implements Serializable {
         this.title = title;
 
     }
+    public Movie(){
+    }
     public Movie(int voteCount, int id, boolean video, double voteAverage, String title,
                  double popularity, String posterPath, String originalLanguage,
                  String originalTitle, List<Integer> genreId, String backdropPath,

@@ -1,6 +1,7 @@
 package com.christine.movieStore.userInterface.activity.movieActivities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,14 +19,18 @@ import com.christine.movieStore.model.MovieTrailerResult;
 import com.christine.movieStore.network.GetMovieTrailerService;
 import com.christine.movieStore.network.RetrofitInstance;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import org.parceler.Parcels;
+
+import java.util.Iterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,7 +41,7 @@ import retrofit2.Response;
 import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.API_KEY;
 import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
 
-public class MovieActivity extends AppCompatActivity implements View.OnClickListener {
+public class MovieActivity extends AppCompatActivity implements View.OnClickListener     {
 
     @BindView(R.id.movie_activity_title)
     TextView mMovieTitle;
@@ -120,10 +125,12 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
 
     public void addFavorites(){
 
+        //set data to variables
         String title = mMovieTitle.getText().toString();
         String overview = mMovieOverview.getText().toString();
         String releaseDate = mMovieReleaseDate.getText().toString();
-        //mDatabaseReference.setValue(title);
+
+        //save data to firebase
         Movie movie = new Movie(title,overview,releaseDate );
         mDatabaseReference = mDatabase.getReference().child("favorites");
         String key = mDatabaseReference.push().getKey();
@@ -131,5 +138,27 @@ public class MovieActivity extends AppCompatActivity implements View.OnClickList
 
         Toast.makeText(this,"Movie added to favorites",Toast.LENGTH_SHORT).show();
 
+        //Read from database
+        mDatabaseReference.child(key).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Movie movie = dataSnapshot.getValue(Movie.class);
+
+                Log.d(TAG, "title: " + movie.getTitle() + ", releaseDate " + movie.getReleaseDate() + ", overview" + movie.getOverview());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+
+
     }
+
+
+
 }

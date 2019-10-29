@@ -89,6 +89,11 @@ public class movieMainActivity extends AppCompatActivity {
             case R.id.action_logout:
                 logout();
                 return true;
+            case R.id.sort_by_favorites:
+                Intent intent = new Intent(movieMainActivity.this, FavoritesActivity.class);
+                startActivity(intent);
+                finish();
+
         }
         loadPage(1);
         return super.onOptionsItemSelected(item);
@@ -103,6 +108,13 @@ public class movieMainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+//    private void favorites(){
+//        Intent intent = new Intent(movieMainActivity.this,FavoritesActivity.class);
+//        startActivity(intent);
+//        finish();
+//
+//    }
 
     private void loadPage(final int page) {
         GetMovieDataService movieDataService = RetrofitInstance.getRetrofitInstance().create(GetMovieDataService.class);

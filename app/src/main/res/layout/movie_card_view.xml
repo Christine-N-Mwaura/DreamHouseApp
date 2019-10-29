@@ -12,4 +12,14 @@
         android:layout_height="284dp"
         android:contentDescription="@string/movie_poster" />
 
+    <ImageView
+        android:id="@+id/dragIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@id/iv_movie_poster"
+        android:layout_alignBottom="@id/iv_movie_poster"
+        android:gravity="bottom|left"
+        android:src="@drawable/reorder_white_18x18"
+        android:outlineAmbientShadowColor="@color/white"/>
+
 </androidx.cardview.widget.CardView>

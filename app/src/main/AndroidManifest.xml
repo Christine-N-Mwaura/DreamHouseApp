@@ -12,11 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.christine.movieStore.userInterface.activity.movieActivities.MovieActivity"></activity>
-        <activity android:name="com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity" />
-        <activity android:name="com.christine.movieStore.userInterface.activity.signup" />
+        <activity android:name=".userInterface.activity.movieActivities.FavoritesActivity"></activity>
+        <activity android:name=".userInterface.activity.movieActivities.MovieActivity" />
+        <activity android:name=".userInterface.activity.movieActivities.movieMainActivity" />
+        <activity android:name=".userInterface.activity.signup" />
         <activity
-            android:name="com.christine.movieStore.userInterface.activity.MainActivity"
+            android:name=".userInterface.activity.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
