@@ -19,12 +19,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.spark.submitbutton.SubmitButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @BindView(R.id.loginButton)Button mLoginButton;
+    @BindView(R.id.loginButton)
+    SubmitButton mLoginButton;
     @BindView(R.id.noAccountTextView)TextView mNoAccount;
     @BindView(R.id.emailEditText)EditText mEmail;
     @BindView(R.id.passwordEditText)EditText mPassword;
