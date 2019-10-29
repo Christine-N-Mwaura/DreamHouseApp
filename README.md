@@ -3,13 +3,13 @@
 ##### By Christine Njeri
 
 ## Description
-This mobile application allows a client to connect with a contractor,make a deal to have them build their house and be able to track daily, weekly and monthly expenses for the building of the house. 
+This mobile application allows a user to login to the application view different posters of movies, read the overview of each movie by clicking on the poster.
 
 ## User Requirements
 The application allow users to do the following:
-1. A user can create an account and save their credentials.
-2. A user can login with their credentials.
-3. A user can logout from the app.
+1. A user can add a movie to favorites table in firebase by clicking on the star button on the details sections.
+2. Implemented animations on the login button.
+3. A user can also drag and drop posters by long pressing on the poster and dropping it to the desired position.
 
 
 ## Project Setup
@@ -31,7 +31,7 @@ The application allow users to do the following:
 
 
 ## Bugs
-Saving the users' details and authentication.
+Retrieving the favorite movie to the favorites section is a feature that is still underway.
 
 
 ## Contact Details
