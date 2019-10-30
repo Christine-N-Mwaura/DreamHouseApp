@@ -14,8 +14,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".userInterface.activity.movieActivities.FavoritesActivity"></activity>
         <activity android:name=".userInterface.activity.movieActivities.MovieActivity" />
-        <activity android:name=".userInterface.activity.movieActivities.movieMainActivity" />
-        <activity android:name=".userInterface.activity.signup" />
+        <activity android:name=".userInterface.activity.movieActivities.MovieMainActivity" />
+        <activity android:name=".userInterface.activity.SignUp" />
         <activity
             android:name=".userInterface.activity.MainActivity"
             android:theme="@style/NoActionBarTheme">

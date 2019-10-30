@@ -1,50 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="6">
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Update" />
-
-        <Button
-            android:id="@+id/btnDelete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Delete" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
+    <ListView
+        android:id="@+id/listViewTxt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:layout_alignParentTop="true" />
 
-        <ListView
-            android:id="@+id/listViewTxt"
-            android:layout_width="match_parent"
-            android:layout_height="510dp"
-            android:layout_alignParentTop ="true">
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dim_16dp"
+        android:layout_weight="0.5"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAllCaps="true"
+        android:text="@string/update_string" />
 
-
-        </ListView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello"/>
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_marginStart="@dimen/dim_16dp"
+        android:layout_marginEnd="@dimen/dim_16dp"
+        android:layout_marginBottom="@dimen/dim_16dp"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:text="Delete" />
 
 
 </LinearLayout>

@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
+import static com.christine.movieStore.userInterface.activity.movieActivities.MovieMainActivity.movieImagePathBuilder;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_movie_poster)

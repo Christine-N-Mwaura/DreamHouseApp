@@ -1,7 +1,5 @@
 package com.christine.movieStore.userInterface.activity.movieActivities;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,19 +16,13 @@ import com.christine.movieStore.model.Movie;
 import com.christine.movieStore.model.MovieTrailerResult;
 import com.christine.movieStore.network.GetMovieTrailerService;
 import com.christine.movieStore.network.RetrofitInstance;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-
-import java.util.Iterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,8 +30,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.API_KEY;
-import static com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity.movieImagePathBuilder;
+import static com.christine.movieStore.userInterface.activity.movieActivities.MovieMainActivity.API_KEY;
+import static com.christine.movieStore.userInterface.activity.movieActivities.MovieMainActivity.movieImagePathBuilder;
 
 public class MovieActivity extends AppCompatActivity implements View.OnClickListener     {
 

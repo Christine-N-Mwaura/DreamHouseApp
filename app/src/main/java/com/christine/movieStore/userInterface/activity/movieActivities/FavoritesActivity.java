@@ -5,11 +5,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.christine.movieStore.R;
 import com.christine.movieStore.model.Movie;
+import com.christine.movieStore.userInterface.adapter.FavoritesAdapter;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,8 +23,8 @@ import java.util.ArrayList;
 public class FavoritesActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     ListView listView;
-    ArrayList<String> arrayList = new ArrayList<>();
-    ArrayAdapter<String> arrayAdapter;
+    ArrayList<Movie> favoritesList = new ArrayList<>();
+    FavoritesAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +32,19 @@ public class FavoritesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorites);
 
         databaseReference= FirebaseDatabase.getInstance().getReference("favorites");
-        listView = (ListView) findViewById(R.id.listViewTxt);
-        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        listView = findViewById(R.id.listViewTxt);
+        arrayAdapter = new FavoritesAdapter(favoritesList, this);
+
         listView.setAdapter(arrayAdapter);
 
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String value = dataSnapshot.getValue(Movie.class).toString();
-                arrayList.add(value);
+                Log.i("trying something", String.valueOf(dataSnapshot));
+                Movie value = dataSnapshot.getValue(Movie.class);
+                favoritesList.add(value);
                 arrayAdapter.notifyDataSetChanged();
+
             }
 
             @Override

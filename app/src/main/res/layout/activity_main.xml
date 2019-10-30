@@ -71,31 +71,45 @@
             android:textColor="@android:color/white" />
 
 
+<!--        <com.spark.submitbutton.SubmitButton-->
+<!--            android:id="@+id/loginButton"-->
+<!--            android:layout_width="10dp"-->
+<!--            android:layout_height="9dp"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:fontFamily="sans-serif-condensed-medium"-->
+<!--            android:text="Login"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="18sp"-->
+<!--            app:sub_btn_background="#830300"-->
+<!--            app:sub_btn_duration="3000"-->
+<!--            app:sub_btn_line_color="#1abc9c"-->
+<!--            app:sub_btn_ripple_color="#1abc9c"-->
+<!--            app:sub_btn_tick_color="@color/white" />-->
         <com.spark.submitbutton.SubmitButton
             android:id="@+id/loginButton"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="32dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="Login"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:sub_btn_background="#830300"
-            app:sub_btn_duration="3000"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:text="Log in"
+            android:textColor="@color/colorPrimaryDark"
+            app:sub_btn_background="@color/white"
+            app:sub_btn_duration="1500"
             app:sub_btn_line_color="#1abc9c"
             app:sub_btn_ripple_color="#1abc9c"
-            app:sub_btn_tick_color="@color/white" />
+            app:sub_btn_tick_color="@color/white"
+            android:layout_gravity="center_horizontal"/>
 
         <TextView
-        android:id="@+id/noAccountTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:text="Don't have an account?"
-        android:textColor="@android:color/white" />
+            android:id="@+id/noAccountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:text="Don't have an account?"
+            android:textColor="@android:color/white" />
 
 
     </LinearLayout>

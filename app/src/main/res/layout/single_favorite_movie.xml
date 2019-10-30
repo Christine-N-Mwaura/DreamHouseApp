@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/dim_16dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="@dimen/dim_16dp"
+    android:paddingBottom="24dp">
 
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/text_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Title:"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_title_text_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text_title_text"
+        android:text="Movie title" />
+
+    <TextView
+        android:id="@+id/text_overview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_release_date_text"
+        android:layout_marginEnd="16dp"
+        android:text="Overview:"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_overview_text_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_release_date_text"
+        android:layout_toRightOf="@id/text_overview_text"
+        android:text="Overview Text" />
+
+    <TextView
+        android:id="@+id/text_release_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_title_text"
+        android:layout_marginEnd="16dp"
+        android:text="Release Date:"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_release_date_text_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_title_text"
+        android:layout_toRightOf="@id/text_release_date_text"
+        android:text="Release Date Text" />
+
+
+</RelativeLayout>

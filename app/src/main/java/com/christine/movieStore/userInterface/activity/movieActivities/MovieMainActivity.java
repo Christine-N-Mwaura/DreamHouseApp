@@ -31,7 +31,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class movieMainActivity extends AppCompatActivity {
+public class MovieMainActivity extends AppCompatActivity {
 
     public static final String API_KEY = "2ce794e7328d397fca26bfa0eb3f2c54";
     private static int totalPages;
@@ -102,7 +102,7 @@ public class movieMainActivity extends AppCompatActivity {
                 logout();
                 return true;
             case R.id.sort_by_favorites:
-                Intent intent = new Intent(movieMainActivity.this, FavoritesActivity.class);
+                Intent intent = new Intent(MovieMainActivity.this, FavoritesActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -115,14 +115,14 @@ public class movieMainActivity extends AppCompatActivity {
 
     private void logout() {
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(movieMainActivity.this, MainActivity.class);
+        Intent intent = new Intent(MovieMainActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }
 
 //    private void favorites(){
-//        Intent intent = new Intent(movieMainActivity.this,FavoritesActivity.class);
+//        Intent intent = new Intent(MovieMainActivity.this,FavoritesActivity.class);
 //        startActivity(intent);
 //        finish();
 //
@@ -152,7 +152,7 @@ public class movieMainActivity extends AppCompatActivity {
                     movieAdapter = new MovieAdapter(movieResults, new MovieClickListener() {
                         @Override
                         public void onMovieClick(Movie movie) {
-                            Intent intent = new Intent(movieMainActivity.this, MovieActivity.class);
+                            Intent intent = new Intent(MovieMainActivity.this, MovieActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putSerializable("movie", movie);
                             intent.putExtras(bundle);
@@ -173,7 +173,7 @@ public class movieMainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MoviePageResult> call, Throwable t) {
-                Toast.makeText(movieMainActivity.this, R.string.something_went_wrong, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MovieMainActivity.this, R.string.something_went_wrong, Toast.LENGTH_SHORT).show();
             }
         });
     }

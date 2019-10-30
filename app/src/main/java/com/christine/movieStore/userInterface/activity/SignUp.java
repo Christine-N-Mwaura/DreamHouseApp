@@ -1,12 +1,10 @@
 package com.christine.movieStore.userInterface.activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,23 +12,19 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.christine.movieStore.R;
-import com.christine.movieStore.userInterface.activity.movieActivities.movieMainActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class signup extends AppCompatActivity implements View.OnClickListener{
+public class SignUp extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.nameEditText) EditText mName;
     @BindView(R.id.emailEditText)EditText mEmail;
     @BindView(R.id.phoneNoEditText)EditText mPhoneNo;
     @BindView(R.id.passwordEditText)EditText mPassword;
     @BindView(R.id.signUpButton) Button mSignUpButton;
-    private static final String TAG = signup.class.getSimpleName();
+    private static final String TAG = SignUp.class.getSimpleName();
 
     private FirebaseAuth mFirebaseAuth;
     private ProgressDialog progressDialog;
@@ -54,7 +48,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
         authStateListener = firebaseAuth -> {
             final FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user != null) {
-                Intent intent = new Intent(signup.this, MainActivity.class);
+                Intent intent = new Intent(SignUp.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
@@ -117,11 +111,11 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
         mFirebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Intent intent=new Intent(signup.this,MainActivity.class);
+                        Intent intent=new Intent(SignUp.this,MainActivity.class);
                         startActivity(intent);
                         Log.d(TAG, "Authentication successful");
                     } else {
-                        Toast.makeText(signup.this, "Authentication failed.",
+                        Toast.makeText(SignUp.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
