@@ -1,9 +1,9 @@
-# DreamHouse App
+# Movie Store App
 
 ##### By Christine Njeri
 
 ## Description
-This mobile application allows a user to login to the application view different posters of movies, read the overview of each movie by clicking on the poster.
+This mobile application allows a user to  view different posters of movies, read the overview of each movie and also other movie details including the date they were produced.
 
 ## User Requirements
 The application allow users to do the following:
